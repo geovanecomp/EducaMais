@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <div class="panel panel-primary">
   <div class="panel-heading">
       <h1>Escolas Cadastradas</h1>
@@ -25,15 +24,17 @@
             <td><%= escola.pitch %></td>
             <td><%= escola.subdominio %></td>
             <td><%= escola.data_criacao %></td>
-            <td><button type="button" class="btn btn-primary"><%= link_to 'Visualizar', escola %></button>
-            <button type="button" class="btn btn-warning"><%= link_to 'Editar', edit_escola_path(escola) %></button>
-            <button type="button" class="btn btn-danger"><%= link_to 'Deletar', escola, method: :delete, data: { confirm: 'Você tem certeza?' } %></button></td>
+            <td>
+              <button type="button" class="btn btn-primary"><%= link_to 'Visualizar', escola %></button>
+              <button type="button" class="btn btn-warning"><%= link_to 'Editar', edit_escola_path(escola) %></button>
+              <button type="button" class="btn btn-danger"><%= link_to 'Deletar', escola, method: :delete, data: { confirm: 'Você tem certeza?' } %></button>
+            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-    <button type="button" class="btn btn-success"><%= link_to 'Cadastra Escola', new_escola_path %></button>
+    <button type="button" class="btn btn-success"><%= link_to 'Cadastrar Escola', new_escola_path %></button>
   </div>
 
 
