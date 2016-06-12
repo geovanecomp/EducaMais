@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611164642) do
+ActiveRecord::Schema.define(version: 20160611223729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20160611164642) do
     t.string   "duracao"
     t.integer  "alunos_ativos"
     t.decimal  "preco"
-    t.integer  "escolas_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "escola_id"
   end
 
   create_table "escolas", force: :cascade do |t|

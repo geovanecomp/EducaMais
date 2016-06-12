@@ -8,15 +8,18 @@
   <%= nav_bar responsive: true, brand:"EducaMais - Educação como prioridade", brand_link: root_url do %>
       <%= menu_group pull: :right  do %>
           <%= menu_item "Inicio", root_path %>
-          <%= menu_item "Escolas", root_path %>
-          <%= menu_item "Cursos", root_path %>
-          <%= menu_item "Sobre nós", root_path %>
-          <%= menu_item "Contato", root_path %>
+          <%= menu_item "Escolas", '/escolas' %>
+          <%= menu_item "Cursos", '/cursos' %>          
+          <!-- <%= menu_item "Sobre nós", root_path %>
+          <%= menu_item "Contato", root_path %> -->
       <% end %>
   <% end %>
 </head>
 <body>
   <div class="container">
+    <% if notice %>
+      <p id="notice" class="alert alert-success"><%= notice %></p>
+    <% end %>
     <%= yield %>
   </div>
 

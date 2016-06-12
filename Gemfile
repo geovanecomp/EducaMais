@@ -7,6 +7,8 @@ gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
 # Use the twitter bootstrap for the application's layout (Focar no backend já que não tenho muito tempo)
 gem 'twitter-bootstrap-rails'
+# To internacionalize my applicationto pt-BR
+gem 'rails-i18n', '~> 4.0.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

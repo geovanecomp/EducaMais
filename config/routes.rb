@@ -11,11 +11,9 @@ Rails.application.routes.draw do
 
   root 'escolas#index'
   get 'cursos' => 'cursos#index'
-  #root 'pages#index'
+  post '/escolas/buscar' => 'escolas#buscar', as: :buscar_escolas
 
-
-
-   #get '/bunda', :to => redirect('inicio.html')
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

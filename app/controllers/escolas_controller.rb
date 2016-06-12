@@ -12,6 +12,17 @@ class EscolasController < ApplicationController
   def show
   end
 
+  def buscar
+    nome_a_buscar = "%#{params[:nome]}%"
+#    @escolas = Escola.where "nome like ?", "%#{@nome}%"
+    @escolas = Escola.where "nome like ?", nome_a_buscar
+    # if @escolas.size > 0
+    #   redirect_to "show"
+    # else
+    #   render "index"
+    # end
+  end
+
   # GET /escolas/new
   def new
     @escola = Escola.new
@@ -28,7 +39,7 @@ class EscolasController < ApplicationController
 
     respond_to do |format|
       if @escola.save
-        format.html { redirect_to @escola, notice: 'Escola was successfully created.' }
+        format.html { redirect_to @escola, notice: 'Escola foi cadastrada com sucesso' }
         format.json { render :show, status: :created, location: @escola }
       else
         format.html { render :new }
@@ -42,7 +53,7 @@ class EscolasController < ApplicationController
   def update
     respond_to do |format|
       if @escola.update(escola_params)
-        format.html { redirect_to @escola, notice: 'Escola was successfully updated.' }
+        format.html { redirect_to @escola, notice: 'Escola foi atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @escola }
       else
         format.html { render :edit }
@@ -56,9 +67,13 @@ class EscolasController < ApplicationController
   def destroy
     @escola.destroy
     respond_to do |format|
-      format.html { redirect_to escolas_url, notice: 'Escola was successfully destroyed.' }
+      format.html { redirect_to escolas_url, notice: 'Escola foi excluida com sucesso.' }
       format.json { head :no_content }
     end
+  end
+
+  def alunos_ativos
+    @escolas_cursos = Escola.all
   end
 
   private

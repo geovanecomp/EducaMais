@@ -1,44 +1,35 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-      <h1>Cadastrar Escola</h1>
-  </div>
-  <div class="panel-body">
-    <%= form_for(@escola) do |f| %>
-      <% if @escola.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@escola.errors.count, "error") %> prohibited this escola from being saved:</h2>
-
-          <ul>
-          <% @escola.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
+<%= form_for(@escola) do |f| %>
+  <% if @escola.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @escola.errors.full_messages.each do |message| %>
+        <li class="alert alert-danger" role="alert"><%= message %></li>
       <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-      <div class="field">
-        <%= f.label :nome %><br>
-        <%= f.text_field :nome %>
-      </div>
-      <div class="field">
-        <%= f.label :email %><br>
-        <%= f.text_field :email %>
-      </div>
-      <div class="field">
-        <%= f.label :pitch %><br>
-        <%= f.text_field :pitch %>
-      </div>
-      <div class="field">
-        <%= f.label :subdominio %><br>
-        <%= f.text_field :subdominio %>
-      </div>
-      <div class="field">
-        <%= f.label :data_criacao %><br>
-        <%= f.date_select :data_criacao %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
-      </div>
-    <% end %>
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome, class: "form-control" %>
   </div>
-</div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :pitch %><br>
+    <%= f.text_field :pitch, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :subdominio %><br>
+    <%= f.text_field :subdominio, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :data_criacao %><br>
+    <%= f.date_select :data_criacao, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit%>
+  </div>
+<% end %>
